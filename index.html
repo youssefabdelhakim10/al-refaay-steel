@@ -1,30 +1,151 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
+
+   <head>
     <meta charset="UTF-8">
-    <title>الرفاعي ستيل | الرئيسية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرفاعي ستيل | الرئيسية (Ezz-inspired)</title>
+    <title>اتصل بنا | الرفاعي ستيل</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* تحسينات ألوان الفورم لتطابق اللوجو */
+        .contact-input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #111; /* أسود أعمق */
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-input:focus {
+            outline: none;
+            border-color: #FF8C00; /* لون اللوجو البرتقالي */
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+        }
+
+        .info-link {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .info-link:hover {
+            color: #FF8C00;
+            text-decoration: underline;
+        }
+
+        .info-box {
+            background: #1a1a1a;
+            padding: 35px;
+            border-radius: 20px;
+            border-right: 6px solid #FF8C00;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 <body>
+
     <nav>
         <a href="index.html" class="logo">الرفاعي <span>ستيل</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="products.html">منتجاتنا</a></li>
-            <li><a href="contact.html">اتصل بنا</a></li>
-        </ul>
+        <div class="nav-right">
+@@ -21,46 +62,61 @@
+        </div>
     </nav>
 
     <header class="hero">
-        <h1>الرفاعي ستيل لخدمات الحديد ومشتقاته</h1>
-        <p>جودة، متانة، ثقة.. شريكك الأول في التوريدات الإنشائية في مصر</p>
-        <a href="products.html" class="btn-main">استعرض منتجاتنا</a>
+        <div class="hero-content">
+            <h1 style="font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 10px; color: white; font-weight: 900;">الرفاعي ستيل لخدمات الحديد ومشتقاته</h1>
+            <p style="max-width: 700px; margin: 20px auto 30px; font-size: clamp(1.1rem, 2vw, 1.4rem); color: #ddd;">جودة، متانة، ثقة.. شريكك الأول في التوريدات الإنشائية والمعمارية في مصر.</p>
+            <a href="contact.html" class="custom-btn">اطلب مقايسة الآن</a>
+        </div>
     </header>
+    <div class="container">
+        <h2>تواصل معنا الآن</h2>
+        <p style="color: #a0a0a0; margin-bottom: 60px;">شريكك الموثوق في عالم الحديد والصاج</p>
 
-    <section style="padding: 80px 10%; text-align: center;">
-        <h2 style="color: #FF8C00; font-size: 2.5rem; margin-bottom: 20px;">لماذا الرفاعي ستيل؟</h2>
-        <p style="max-width: 800px; margin: 0 auto; color: #aaa;">نحن نلتزم بتوفير أفضل خامات الحديد والصاج بأعلى المواصفات الفنية وأنسب الأسعار في السوق المصري، مع ضمان سرعة التوريد لكل المحافظات.</p>
+    <section class="container" style="background: rgba(26,26,26,0.3);">
+        <h2>نبذة عن الرفاعي ستيل</h2>
+        <p style="max-width: 800px; margin: 0 auto; color: var(--text-grey); font-size: 1.1rem;">الرفاعي ستيل هي شركة رائدة في مجال توريدات الحديد والصاج في مصر، تعتمد على معايير الجودة العالمية في كافة منتجاتها. نحن نسعى دائماً لتقديم أفضل الحلول الإنشائية بأفضل الأسعار لعملائنا في كافة القطاعات.</p>
     </section>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; text-align: right;">
+            
+            <div class="info-box">
+                <h3 style="color: #FF8C00; margin-bottom: 30px; font-size: 1.5rem;">معلومات التواصل</h3>
+                
+                <div style="margin-bottom: 25px;">
+                    <i class="fas fa-phone-alt" style="color: #FF8C00; margin-left: 12px;"></i>
+                    <span>المبيعات: </span>
+                    <a href="tel:+201090557842" class="info-link">01090557842</a>
+                </div>
+
+    <footer>
+        <div class="footer-top">
+            <div>
+                <a href="index.html" class="footer-logo">الرفاعي <span>ستيل</span></a>
+            </div>
+            <div>
+                <h4 class="footer-heading">روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="products.html">المنتجات</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-heading">بيانات الاتصال</h4>
+                <p>ت: +20 [0242157778] (01090557842)</p>
+                <p>إيميل: <a href="mailto:info@al-refaay-steel.com">info@al-refaay-steel.com</a></p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/alrfa.y.styl.490532/"><i class="fab fa-facebook"></i></a>
+                <div style="margin-bottom: 25px;">
+                    <i class="fab fa-whatsapp" style="color: #25D366; margin-left: 12px;"></i>
+                    <span>واتساب: </span>
+                    <a href="https://wa.me/201019569889" target="_blank" class="info-link" style="color: #25D366;">راسلنا الآن</a>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <i class="fas fa-envelope" style="color: #FF8C00; margin-left: 12px;"></i>
+                    <span>الإيميل: </span>
+                    <a href="mailto:info@al-refaay-steel.com" class="info-link">info@al-refaay-steel.com</a>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <i class="fas fa-map-marker-alt" style="color: #FF8C00; margin-left: 12px;"></i>
+                    <span>المقر الرئيسي: </span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=الرفاعي+ستيل+قليوب" target="_blank" class="info-link">
+                        قليوب، طريق العوادم  البطئ (اضغط لعرض الخريطة)
+                    </a>
+                </div>
+            </div>
+
+            <div style="background: #1a1a1a; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <h3 style="color: #FF8C00; margin-bottom: 30px; font-size: 1.5rem;">أرسل طلبك مباشرة</h3>
+                <form action="https://formspree.io/f/mpqkjebo" method="POST">
+                    <input type="text" name="name" placeholder="الاسم بالكامل" required class="contact-input">
+                    <input type="tel" name="phone" placeholder="رقم الهاتف" required class="contact-input">
+                    <textarea name="message" placeholder="ما هي احتياجاتك من الحديد أو الصاج او غيرة ؟" required class="contact-input" style="height: 120px;"></textarea>
+                    
+                    <button type="submit" class="custom-btn" style="width: 100%; border-radius: 8px; cursor: pointer;">إرسال الطلب</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة لشركة الرفاعي ستيل &copy; 2026</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Web design & development by Youssef Abdelhakim. 2026.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
