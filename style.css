@@ -1,9 +1,9 @@
 :root {
-    --primary: #FF8C00; /* برتقالي حديدي */
-    --dark: #121212;
+    --primary-orange: #FF8C00; /* درجة البرتقالي اللي في اللوجو */
+    --pure-white: #ffffff;
+    --deep-dark: #121212; /* الأسود الفخم بتاع الخلفية */
     --card-bg: #1e1e1e;
-    --text-light: #f4f4f4;
-    --transition: all 0.4s ease;
+    --transition: all 0.3s ease;
 }
 
 * {
@@ -14,170 +14,93 @@
 }
 
 body {
-    background-color: var(--dark);
-    color: var(--text-light);
-    line-height: 1.6;
-    overflow-x: hidden;
+    background-color: var(--deep-dark);
+    color: var(--pure-white);
 }
 
-/* Navbar */
+/* Navbar - مطابقة للبار اللي في اللوجو */
 .navbar {
-    padding: 15px 10%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px); /* تأثير الزجاج المغبش */
-    border-bottom: 2px solid var(--primary);
+    padding: 10px 8%;
+    background: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #1a1a1a;
 }
+
 .logo {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 900;
+    color: var(--pure-white);
+    letter-spacing: -1px;
 }
 
 .logo span {
-    color: var(--primary);
+    color: var(--primary-orange);
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    margin-right: 30px;
-    transition: var(--transition);
-}
-
-.nav-links li a:hover {
-    color: var(--primary);
-}
-
-/* Hero Section */
+/* Hero Section - تغيير صورة "القلعة" لمصنع حديد حقيقي */
 .hero {
     height: 100vh;
-    /* صورة لمصنع حديد احترافية بدقة عالية */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), 
-                url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1920&q=80');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2070&auto=format&fit=crop'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* بيخلي الصورة ثابتة وأنت بتعمل سكرول - شكلها صايع جداً */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-bottom: 5px solid var(--primary-orange);
 }
 
 .hero-content h1 {
+    font-size: 4rem;
     font-weight: 900;
-    letter-spacing: 1px;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
-
-
 
 .divider {
-    width: 80px;
-    height: 4px;
-    background: var(--primary);
+    width: 150px;
+    height: 6px;
+    background: var(--primary-orange);
     margin: 10px auto 30px;
+    border-radius: 10px;
 }
 
+/* الأزرار بنظام اللوجو */
 .cta-button {
-    background: linear-gradient(45deg, #FF8C00, #FF4500); /* تدرج برتقالي ناري */
-    border: none;
-    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+    padding: 18px 45px;
+    background: var(--primary-orange);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* حواف حادة شوية لتناسب طابع الحديد */
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: var(--transition);
+    border: 2px solid var(--primary-orange);
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.4);
+    background: transparent;
+    color: var(--primary-orange);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
 }
 
-/* Features Section */
-.features {
-    padding: 100px 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
+/* تحسين البطاقات */
 .feature-card {
-    background: var(--card-bg);
+    background: #1a1a1a;
+    border-top: 4px solid var(--primary-orange);
     padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 15px 15px;
     transition: var(--transition);
 }
 
 .feature-card:hover {
-    border-color: var(--primary);
     transform: translateY(-10px);
-}
-
-.icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-/* Contact Form */
-.contact-section {
-    padding: 100px 20px;
-    background: #0a0a0a;
-}
-
-.form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 25px;
-}
-
-.form-container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--primary);
-}
-
-input, textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    background: #2a2a2a;
-    border: 1px solid #333;
-    border-radius: 10px;
-    color: white;
-    font-size: 1rem;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 15px;
-    background: var(--primary);
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-/* Animations */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+    background: #222;
 }
