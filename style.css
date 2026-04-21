@@ -1,51 +1,107 @@
-/* ضبط اللوجو */
-.logo {
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: #ffffff;
+/* Master Styles - Al-Refaay Steel (Ezz-inspired) */
+:root {
+    --primary: #FF8C00; /* البرتقالي الناري المطابق للوجو */
+    --dark-background: #121212; /* الرمادي الفحمي الفخم */
+    --navbar-background: rgba(0, 0, 0, 0.95);
+    --text-light: #f4f4f4;
+    --text-grey: #a0a0a0;
+    --border-grey: #333;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+
+body { background: var(--dark-background); color: var(--text-light); line-height: 1.6; }
+
+/* Navbar - Ezz-inspired layout (image_9.png) */
+nav {
+    background: var(--navbar-background);
+    padding: 15px 10%;
     display: flex;
-    gap: 10px; /* بيعمل مسافة احترافية بين الكلمتين */
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo span {
-    color: #FF8C00; /* اللون البرتقالي */
+.logo { font-size: 24px; font-weight: 900; color: white; text-decoration: none; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary); }
+
+/* محاكاة تظبيط اللغة (AR) - image_9.png */
+.language-switcher { color: white; font-weight: 700; margin-left: 15px; text-decoration: none; }
+.nav-right { display: flex; align-items: center; }
+
+/* تنسيق عام للأقسام */
+.container { padding: 80px 10%; text-align: center; }
+h2 { font-size: 2.8rem; color: var(--primary); margin-bottom: 30px; font-weight: 900; text-shadow: 0 0 10px rgba(255,140,0,0.3); }
+
+/* الأزرار المخصصة - محاكاة (image_9.png) */
+.custom-btn {
+    background: linear-gradient(45deg, var(--primary), #FF4500);
+    color: white;
+    padding: 18px 45px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s ease-out;
+    border: 2px solid var(--primary);
 }
 
-/* ضبط الهيرو وصورتك الشخصية */
+.custom-btn:hover { background: transparent; color: var(--primary); box-shadow: 0 0 20px rgba(255, 140, 0, 0.4); }
+
+/* تنسيق الـ Hero Section (image_9.png) */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
-                url('main-bg.jpg'); /* اتأكد إن الاسم مطابق للصورة اللي رفعتها */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                url('main-bg.jpg') center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-.hero-content h1 {
-    font-size: 3.5rem;
-    color: white !important; /* كلمة important بتجبر المتصفح يخلي اللون أبيض */
-    margin-bottom: 20px;
-    font-weight: 900;
+    border-bottom: 5px solid var(--primary);
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    color: #f4f4f4 !important;
-    max-width: 700px;
-    margin: 0 auto;
+/* تنسيق الـ Footer الجديد (تصميم Ezz - image_10.png) */
+footer {
+    background: #000;
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-grey);
 }
 
-/* عشان نشيل النقط الزرقاء من القائمة */
-.nav-links {
-    display: flex;
-    list-style: none; /* دي بتشيل النقط */
+.footer-top {
+    padding: 60px 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    background: var(--dark-background);
 }
 
-.nav-links li a {
-    color: white;
-    text-decoration: none; /* دي بتشيل الخط اللي تحت اللينك */
-    margin-right: 20px;
+.footer-logo { font-size: 1.8rem; font-weight: 900; color: white; margin-bottom: 20px; text-decoration: none; display: block; }
+.footer-logo span { color: var(--primary); }
+
+.footer-heading { color: white; font-weight: 700; margin-bottom: 20px; }
+.footer-links { list-style: none; }
+.footer-links a { color: var(--text-grey); text-decoration: none; display: block; margin-bottom: 10px; transition: 0.3s; }
+.footer-links a:hover { color: white; }
+
+.footer-contact p { margin-bottom: 15px; }
+.footer-contact a { color: var(--text-grey); text-decoration: none; }
+.footer-contact a:hover { color: white; }
+
+/* محاكاة أيقونات حديد عز (image_10.png) */
+.social-icons { display: flex; gap: 15px; margin-top: 20px; }
+.social-icons a { color: var(--text-grey); font-size: 1.2rem; }
+.social-icons a:hover { color: white; }
+
+.footer-bottom {
+    padding: 20px 10%;
+    text-align: center;
+    border-top: 1px solid var(--border-grey);
 }
