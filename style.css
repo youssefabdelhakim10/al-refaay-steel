@@ -22,18 +22,11 @@ body {
 
 /* Navbar */
 .navbar {
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(18, 18, 18, 0.95);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 140, 0, 0.2);
+    padding: 15px 10%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px); /* تأثير الزجاج المغبش */
+    border-bottom: 2px solid var(--primary);
 }
-
 .logo {
     font-size: 1.8rem;
     font-weight: 900;
@@ -75,9 +68,13 @@ body {
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    color: #fff;
 }
+
+
 
 .divider {
     width: 80px;
@@ -87,15 +84,9 @@ body {
 }
 
 .cta-button {
-    padding: 15px 35px;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 20px;
-    transition: var(--transition);
+    background: linear-gradient(45deg, #FF8C00, #FF4500); /* تدرج برتقالي ناري */
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
 }
 
 .cta-button:hover {
