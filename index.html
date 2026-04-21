@@ -4,67 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الرفاعي ستيل | لتوريدات الحديد والصاج</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* كود الـ CSS جوه الـ HTML عشان نضمن ظهوره */
+        :root {
+            --primary-orange: #FF8C00;
+            --deep-dark: #121212;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--deep-dark);
+            color: white;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .navbar {
+            padding: 15px 50px;
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-orange);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            display: flex;
+            gap: 8px;
+        }
+
+        .logo span { color: var(--primary-orange); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+                        url('main-bg.jpg'); /* تأكد من وجود صورة بهذا الاسم */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: var(--primary-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">الرفاعي <span>ستيل</span></div>
         <ul class="nav-links">
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#products">منتجاتنا</a></li>
-            <li><a href="#contact">اطلب الآن</a></li>
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#">منتجاتنا</a></li>
+            <li><a href="#">اطلب الآن</a></li>
         </ul>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content reveal">
+    <header class="hero">
+        <div class="hero-content">
             <h1>الرفاعي ستيل لخدمات الحديد ومشتقاته</h1>
-            <div class="divider"></div>
             <p>جودة، متانة، ثقة.. شريكك الأول في التوريدات الإنشائية في مصر</p>
-            <a href="#contact" class="cta-button">ابدأ مشروعك معنا</a>
+            <a href="#" class="cta-button">ابدأ مشروعك معنا</a>
         </div>
     </header>
 
-    <section class="features">
-        <div class="container grid">
-            <div class="feature-card reveal">
-                <div class="icon">🏗️</div>
-                <h3>دعم فني متخصص</h3>
-                <p>فريقنا معك لاختيار أفضل أنواع الحديد لمشروعك.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="icon">💰</div>
-                <h3>أسعار تنافسية</h3>
-                <p>نقدم أفضل سعر في السوق المصري مع أعلى جودة.</p>
-            </div>
-            <div class="feature-card reveal">
-                <div class="icon">🚀</div>
-                <h3>سرعة في التوريد</h3>
-                <p>أسطول نقل مجهز لتوصيل طلبياتك في أسرع وقت.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="form-container reveal">
-                <h2>اطلب مقايسة الآن</h2>
-                <form action="https://formspree.io/f/حط_رابط_فورم_سبري_هنا" method="POST">
-                    <input type="text" name="name" placeholder="الاسم بالكامل" required>
-                    <input type="tel" name="phone" placeholder="رقم الموبايل" required>
-                    <textarea name="message" placeholder="تفاصيل الطلب (الكمية والمقاسات)" required></textarea>
-                    <button type="submit" class="submit-btn">إرسال الطلب</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>جميع الحقوق محفوظة لشركة الرفاعي ستيل &copy; 2026</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
