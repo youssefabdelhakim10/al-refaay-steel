@@ -3,120 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا | الرفاعي ستيل</title>
-    <link rel="stylesheet" href="style.css">
+    <title>الرفاعي ستيل | فخر صناعة الحديد في مصر</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* تحسينات ألوان الفورم لتطابق اللوجو */
-        .contact-input {
+        /* كود الـ CSS جوه الـ HTML كحل طارئ */
+        :root {
+            --primary-orange: #FF8C00; /* درجة البرتقالي الناري */
+            --deep-dark: #121212; /* الأسود الفخم */
+            --pure-white: #ffffff;
+            --text-grey: #f4f4f4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--deep-dark); color: var(--pure-white); line-height: 1.6; overflow-x: hidden; }
+
+        /* Navbar */
+        .navbar {
+            padding: 15px 10%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
             width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            background: #111; /* أسود أعمق */
-            border: 1px solid #333;
-            border-radius: 8px;
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-orange);
         }
 
-        .contact-input:focus {
-            outline: none;
-            border-color: #FF8C00; /* لون اللوجو البرتقالي */
-            box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+        .logo { font-size: 2.2rem; font-weight: 900; color: var(--pure-white); letter-spacing: -1px; display: flex; gap: 8px; }
+        .logo span { color: var(--primary-orange); }
+
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 700; transition: all 0.3s ease; }
+        .nav-links a:hover { color: var(--primary-orange); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2070&auto=format&fit=crop'); /* صورة مصنع درفلة حديد */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            border-bottom: 5px solid var(--primary-orange);
         }
 
-        .info-link {
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: var(--pure-white);
+        }
+
+        .divider { width: 150px; height: 6px; background: var(--primary-orange); margin: 10px auto 30px; border-radius: 10px; }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            color: var(--text-grey);
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            padding: 18px 45px;
+            background: linear-gradient(45deg, #FF8C00, #FF4500);
             color: white;
             text-decoration: none;
-            transition: 0.3s;
+            border-radius: 8px; /* حواف حادة لتناسب طابع الحديد */
+            font-size: 1.3rem;
             font-weight: bold;
+            display: inline-block;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-orange);
         }
 
-        .info-link:hover {
-            color: #FF8C00;
-            text-decoration: underline;
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+            background: transparent;
+            color: var(--primary-orange);
         }
 
-        .info-box {
-            background: #1a1a1a;
-            padding: 35px;
-            border-radius: 20px;
-            border-right: 6px solid #FF8C00;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        /* Responsive للموبايل */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; padding: 20px; gap: 15px; }
+            .nav-links { gap: 15px; }
+            .hero-content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">الرفاعي <span>ستيل</span></a>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="products.html">المنتجات</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
-            <a href="#" class="language-switcher">AR</a>
-        </div>
+    <nav class="navbar">
+        <a href="#" class="logo">الرفاعي <span>ستيل</span></a>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#products">منتجاتنا</a></li>
+            <li><a href="#contact">اطلب الآن</a></li>
+        </ul>
     </nav>
 
-    <div class="container">
-        <h2>تواصل معنا الآن</h2>
-        <p style="color: #a0a0a0; margin-bottom: 60px;">شريكك الموثوق في عالم الحديد والصاج</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; text-align: right;">
-            
-            <div class="info-box">
-                <h3 style="color: #FF8C00; margin-bottom: 30px; font-size: 1.5rem;">معلومات التواصل</h3>
-                
-                <div style="margin-bottom: 25px;">
-                    <i class="fas fa-phone-alt" style="color: #FF8C00; margin-left: 12px;"></i>
-                    <span>المبيعات: </span>
-                    <a href="tel:+201090557842" class="info-link">01090557842</a>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <i class="fab fa-whatsapp" style="color: #25D366; margin-left: 12px;"></i>
-                    <span>واتساب: </span>
-                    <a href="https://wa.me/201019569889" target="_blank" class="info-link" style="color: #25D366;">راسلنا الآن</a>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <i class="fas fa-envelope" style="color: #FF8C00; margin-left: 12px;"></i>
-                    <span>الإيميل: </span>
-                    <a href="mailto:info@al-refaay-steel.com" class="info-link">info@al-refaay-steel.com</a>
-                </div>
-
-                <div style="margin-bottom: 25px;">
-                    <i class="fas fa-map-marker-alt" style="color: #FF8C00; margin-left: 12px;"></i>
-                    <span>المقر الرئيسي: </span>
-                    <a href="https://www.google.com/maps/search/?api=1&query=الرفاعي+ستيل+قليوب" target="_blank" class="info-link">
-                        قليوب، طريق العوادم  البطئ (اضغط لعرض الخريطة)
-                    </a>
-                </div>
-            </div>
-
-            <div style="background: #1a1a1a; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                <h3 style="color: #FF8C00; margin-bottom: 30px; font-size: 1.5rem;">أرسل طلبك مباشرة</h3>
-                <form action="https://formspree.io/f/mpqkjebo" method="POST">
-                    <input type="text" name="name" placeholder="الاسم بالكامل" required class="contact-input">
-                    <input type="tel" name="phone" placeholder="رقم الهاتف" required class="contact-input">
-                    <textarea name="message" placeholder="ما هي احتياجاتك من الحديد أو الصاج او غيرة ؟" required class="contact-input" style="height: 120px;"></textarea>
-                    
-                    <button type="submit" class="custom-btn" style="width: 100%; border-radius: 8px; cursor: pointer;">إرسال الطلب</button>
-                </form>
-            </div>
-
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>الرفاعي ستيل لخدمات الحديد ومشتقاته</h1>
+            <div class="divider"></div>
+            <p>جودة، متانة، ثقة.. شريكك الأول في التوريدات الإنشائية في مصر</p>
+            <a href="#contact" class="cta-button">ابدأ مشروعك معنا</a>
         </div>
-    </div>
-
-    <footer>
-        <div class="footer-bottom">
-            <p>جميع الحقوق محفوظة لشركة الرفاعي ستيل &copy; 2026</p>
-        </div>
-    </footer>
+    </header>
 
 </body>
 </html>
