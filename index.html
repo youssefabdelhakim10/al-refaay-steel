@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرفاعي ستيل | لتوريدات الحديد والصاج</title>
+    <style>
+        /* CSS3 - الهوية البصرية والحركات */
+        :root {
+            --primary-orange: #FF8C00;
+            --dark-steel: #1a1a1a;
+            --light-grey: #f4f4f4;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--dark-steel);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Header & Nav */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* صورة خلفية صناعية */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: var(--primary-orange);
+            margin-bottom: 30px;
+            opacity: 0;
+        }
+
+        /* Button Pro Style */
+        .btn-pro {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .btn-pro:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.5);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 20px;
+            background: white;
+            color: var(--dark-steel);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--light-grey);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 5px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-orange);
+        }
+
+        /* JS Animation Trigger Classes */
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <h1 id="mainTitle">الرفاعي ستيل</h1>
+            <p id="subTitle">جودة الفولاذ.. أمان البناء</p>
+            <a href="https://wa.me/201XXXXXXXXX" class="btn-pro">اطلب السعر الآن</a>
+        </div>
+    </header>
+
+    <section class="products">
+        <h2 style="text-align:center; font-size: 2.5rem; margin-bottom: 50px;">منتجاتنا الاحترافية</h2>
+        <div class="grid">
+            <div class="card reveal">
+                <h3>ألواح الصاج</h3>
+                <p>أسود، مجلفن، وملون بأعلى المواصفات.</p>
+            </div>
+            <div class="card reveal">
+                <h3>مواسير وعلب</h3>
+                <p>تشكيلة كاملة من المواسير والعلب الحديدية.</p>
+            </div>
+            <div class="card reveal">
+                <h3>الكمرات والزوايا</h3>
+                <p>جميع المقاسات للمشاريع الإنشائية الضخمة.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript Logic - الحركات التفاعلية
+        document.addEventListener('DOMContentLoaded', () => {
+            // ظهور العناوين عند تحميل الصفحة
+            const title = document.getElementById('mainTitle');
+            const subTitle = document.getElementById('subTitle');
+            
+            setTimeout(() => {
+                title.classList.add('show');
+            }, 300);
+
+            setTimeout(() => {
+                subTitle.classList.add('show');
+                subTitle.style.opacity = "1";
+            }, 800);
+
+            // حركة العناصر عند السكرول (Scroll Animation)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
