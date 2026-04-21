@@ -2,124 +2,29 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الرفاعي ستيل | فخر صناعة الحديد في مصر</title>
-    
+    <title>الرفاعي ستيل | الرئيسية</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        /* كود الـ CSS جوه الـ HTML كحل طارئ */
-        :root {
-            --primary-orange: #FF8C00; /* درجة البرتقالي الناري */
-            --deep-dark: #121212; /* الأسود الفخم */
-            --pure-white: #ffffff;
-            --text-grey: #f4f4f4;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-        body { background-color: var(--deep-dark); color: var(--pure-white); line-height: 1.6; overflow-x: hidden; }
-
-        /* Navbar */
-        .navbar {
-            padding: 15px 10%;
-            background: rgba(0, 0, 0, 0.95);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--primary-orange);
-        }
-
-        .logo { font-size: 2.2rem; font-weight: 900; color: var(--pure-white); letter-spacing: -1px; display: flex; gap: 8px; }
-        .logo span { color: var(--primary-orange); }
-
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 700; transition: all 0.3s ease; }
-        .nav-links a:hover { color: var(--primary-orange); }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2070&auto=format&fit=crop'); /* صورة مصنع درفلة حديد */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            border-bottom: 5px solid var(--primary-orange);
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            color: var(--pure-white);
-        }
-
-        .divider { width: 150px; height: 6px; background: var(--primary-orange); margin: 10px auto 30px; border-radius: 10px; }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            color: var(--text-grey);
-            margin: 0 auto;
-        }
-
-        .cta-button {
-            padding: 18px 45px;
-            background: linear-gradient(45deg, #FF8C00, #FF4500);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px; /* حواف حادة لتناسب طابع الحديد */
-            font-size: 1.3rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-orange);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
-            background: transparent;
-            color: var(--primary-orange);
-        }
-
-        /* Responsive للموبايل */
-        @media (max-width: 768px) {
-            .navbar { flex-direction: column; padding: 20px; gap: 15px; }
-            .nav-links { gap: 15px; }
-            .hero-content h1 { font-size: 2.5rem; }
-        }
-    </style>
 </head>
 <body>
-
-    <nav class="navbar">
-        <a href="#" class="logo">الرفاعي <span>ستيل</span></a>
+    <nav>
+        <a href="index.html" class="logo">الرفاعي <span>ستيل</span></a>
         <ul class="nav-links">
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#products">منتجاتنا</a></li>
-            <li><a href="#contact">اطلب الآن</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">منتجاتنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <h1>الرفاعي ستيل لخدمات الحديد ومشتقاته</h1>
-            <div class="divider"></div>
-            <p>جودة، متانة، ثقة.. شريكك الأول في التوريدات الإنشائية في مصر</p>
-            <a href="#contact" class="cta-button">ابدأ مشروعك معنا</a>
-        </div>
+    <header class="hero">
+        <h1>الرفاعي ستيل لخدمات الحديد ومشتقاته</h1>
+        <p>جودة، متانة، ثقة.. شريكك الأول في التوريدات الإنشائية في مصر</p>
+        <a href="products.html" class="btn-main">استعرض منتجاتنا</a>
     </header>
 
+    <section style="padding: 80px 10%; text-align: center;">
+        <h2 style="color: #FF8C00; font-size: 2.5rem; margin-bottom: 20px;">لماذا الرفاعي ستيل؟</h2>
+        <p style="max-width: 800px; margin: 0 auto; color: #aaa;">نحن نلتزم بتوفير أفضل خامات الحديد والصاج بأعلى المواصفات الفنية وأنسب الأسعار في السوق المصري، مع ضمان سرعة التوريد لكل المحافظات.</p>
+    </section>
 </body>
 </html>
