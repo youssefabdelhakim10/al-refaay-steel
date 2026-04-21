@@ -24,3 +24,28 @@
     align-items: center;
     text-align: center;
 }
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: white !important; /* كلمة important بتجبر المتصفح يخلي اللون أبيض */
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #f4f4f4 !important;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* عشان نشيل النقط الزرقاء من القائمة */
+.nav-links {
+    display: flex;
+    list-style: none; /* دي بتشيل النقط */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none; /* دي بتشيل الخط اللي تحت اللينك */
+    margin-right: 20px;
+}
