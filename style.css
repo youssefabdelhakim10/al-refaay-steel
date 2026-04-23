@@ -208,3 +208,37 @@ footer {
     color: white; /* يقلب أبيض لما الماوس ييجي عليه */
     text-shadow: 0 0 10px var(--primary);
 }
+
+
+/* تنسيق معرض الصور ده اخر تعديل  */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 140, 0, 0.9);
+    color: black;
+    text-align: center;
+    padding: 15px;
+    font-weight: 900;
+    transition: 0.4s;
+}
+
+.gallery-item:hover .overlay {
+    bottom: 0;
+}
+
+
