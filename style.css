@@ -210,7 +210,7 @@ footer {
 }
 
 
-/* تنسيق معرض الصور ده اخر تعديل  */
+/* تنسيق معرض الصور   */
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -241,4 +241,19 @@ footer {
     bottom: 0;
 }
 
+/* ده اخر تعديل تنسيق اللوجو بجانب الكلمة */
+.logo {
+    display: flex;
+    align-items: center; /* يخلي الصورة والكلام على سطر واحد بالظبط */
+    gap: 10px; /* مسافة بسيطة بين الصورة والكلمة */
+}
 
+.logo img {
+    max-height: 50px; /* تحكم في كبر اللوجو من هنا */
+    transition: 0.3s ease;
+}
+
+/* حركة احترافية لما العميل يلمس اللوجو */
+.logo:hover img {
+    transform: scale(1.1);
+}
