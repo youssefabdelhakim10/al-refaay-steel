@@ -186,5 +186,23 @@
 </div>
 </footer>
 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+
+<script>
+    // تشغيل أنيميشن الظهور
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    // تشغيل معرض الصور الاحترافي
+    const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: true
+    });
+</script>
+    
 </body>
 </html>
