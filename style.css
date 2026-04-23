@@ -131,3 +131,24 @@ footer {
     font-size: 0.8rem;
     color: #777;
 }
+
+/* ستايل المطور */
+.dev-link {
+    color: var(--primary); /* اللون البرتقالي بتاعك */
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 5px;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dev-link i {
+    font-size: 1rem; /* حجم أيقونة لينكد إن */
+}
+
+.dev-link:hover {
+    color: white; /* يقلب أبيض لما الماوس ييجي عليه */
+    text-shadow: 0 0 10px var(--primary);
+}
