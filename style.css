@@ -46,6 +46,62 @@ nav {
 .btn-main { background: var(--primary); color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; font-weight: 900; margin-top: 20px; display: inline-block; transition: var(--transition); border: 2px solid var(--primary); }
 .btn-main:hover { background: transparent; color: var(--primary); }
 
+/* ستايل سابقة الأعمال الاحترافي */
+.project-featured {
+    background: #111;
+    border-radius: 30px;
+    padding: 50px;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 250px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 140, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.gallery-item:hover .overlay { opacity: 1; }
+.gallery-item:hover { transform: scale(1.05); border-color: var(--primary); }
+.gallery-item i { font-size: 3rem; color: white; }
+
+/* تأثير "الوهج" (Glow) على العناوين */
+h2:hover {
+    text-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+    cursor: default;
+}
+
+
+
+
+
+
+
+
+
 /* Products Grid Section */
 .product-item {
     background: var(--grey);
