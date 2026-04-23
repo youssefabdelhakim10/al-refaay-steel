@@ -67,6 +67,67 @@ nav {
 }
 
 /* Footer */
-footer { background: #000; padding: 60px 10% 20px; border-top: 1px solid #333; margin-top: 50px; }
-.footer-info { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; }
-.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #222; color: #777; font-size: 0.8rem; }
+/* Footer Ezz Steel Style */
+footer {
+    background: #1a1a1a; /* لون الخلفية الغامق */
+    padding: 60px 10% 20px;
+    border-top: 2px solid var(--primary);
+    color: white;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: right;
+}
+
+.footer-title {
+    color: var(--primary); /* اللون البرتقالي/الأصفر */
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.footer-col p {
+    margin-bottom: 12px;
+    color: #f4f4f4;
+    font-size: 1rem;
+}
+
+/* ستايل أيقونات السوشيال ميديا المربعة (زي حديد عز) */
+.social-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-box {
+    background: var(--primary); /* المربع البرتقالي/الأصفر */
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-box i {
+    color: #000; /* الأيقونة سودة جوه المربع */
+    font-size: 1.5rem;
+}
+
+.social-box:hover {
+    transform: translateY(-5px);
+    background: white;
+}
+
+.footer-bottom-line {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #777;
+}
