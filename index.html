@@ -235,18 +235,19 @@
 
     // تأثير حركة الأرقام (Counter Animation)
     const counters = document.querySelectorAll('.counter');
-    const speed = 100; // سرعة العداد
+    const speed = 50; // سرعة العداد
+    let countersStarted = false;
 
     const animateCounters = () => {
         counters.forEach(counter => {
             const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
+                const target = parseInt(counter.getAttribute('data-target')) || 0;
+                const count = parseInt(counter.innerText) || 0;
                 const inc = Math.max(1, Math.ceil(target / speed));
 
                 if (count < target) {
-                    counter.innerText = count + inc > target ? target : count + inc;
-                    setTimeout(updateCount, 20);
+                    counter.innerText = (count + inc > target) ? target : (count + inc);
+                    setTimeout(updateCount, 30);
                 } else {
                     counter.innerText = target;
                 }
@@ -255,23 +256,21 @@
         });
     }
 
-    // تشغيل العداد 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                animateCounters();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+    const checkScroll = () => {
+        const statsSection = document.querySelector('.stats-section');
+        if (!statsSection || countersStarted) return;
+        
+        const rect = statsSection.getBoundingClientRect();
+        // If the section is visible in the viewport
+        if (rect.top < window.innerHeight) {
+            countersStarted = true;
+            animateCounters();
+        }
+    };
 
-    const statsSection = document.querySelector('.stats-section');
-    if(statsSection) {
-        observer.observe(statsSection);
-    } else {
-        // Fallback in case observer fails to attach
-        setTimeout(animateCounters, 1000);
-    }
+    window.addEventListener('scroll', checkScroll);
+    // Check initially in case it's already in view
+    setTimeout(checkScroll, 500);
 </script>
 
     
