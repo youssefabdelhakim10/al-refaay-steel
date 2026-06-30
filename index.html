@@ -42,11 +42,25 @@
         </div>
     </header>
 
-    <section style="background: #111; padding: 40px 10%; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; border-bottom: 1px solid #222;">
-        <div><h3 style="color: var(--primary); font-size: 2rem;">+15</h3><p>عام خبرة</p></div>
-        <div><h3 style="color: var(--primary); font-size: 2rem;">+500</h3><p>عميل يثق بنا</p></div>
-        <div><h3 style="color: var(--primary); font-size: 2rem;">24/7</h3><p>دعم فني</p></div>
-        <div><h3 style="color: var(--primary); font-size: 2rem;">100%</h3><p>جودة مضمونة</p></div>
+    <section class="stats-section" style="background: #111; padding: 60px 10%; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; border-bottom: 1px solid #222; position: relative; overflow: hidden; gap: 30px;">
+        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,140,0,0.08) 0%, transparent 60%); z-index: 0; pointer-events: none;"></div>
+        
+        <div style="z-index: 1;" data-aos="zoom-in" data-aos-delay="0">
+            <h3 style="color: var(--primary); font-size: 3.5rem; font-weight: 900; text-shadow: 0 0 15px var(--primary-glow); margin-bottom: 5px; font-family: sans-serif;"><span style="color: var(--white); font-size: 2.5rem;">+</span><span class="counter" data-target="15">0</span></h3>
+            <p style="font-size: 1.2rem; color: #ccc; font-weight: bold;">عام خبرة</p>
+        </div>
+        <div style="z-index: 1;" data-aos="zoom-in" data-aos-delay="100">
+            <h3 style="color: var(--primary); font-size: 3.5rem; font-weight: 900; text-shadow: 0 0 15px var(--primary-glow); margin-bottom: 5px; font-family: sans-serif;"><span style="color: var(--white); font-size: 2.5rem;">+</span><span class="counter" data-target="500">0</span></h3>
+            <p style="font-size: 1.2rem; color: #ccc; font-weight: bold;">عميل يثق بنا</p>
+        </div>
+        <div style="z-index: 1;" data-aos="zoom-in" data-aos-delay="200">
+            <h3 style="color: var(--primary); font-size: 3.5rem; font-weight: 900; text-shadow: 0 0 15px var(--primary-glow); margin-bottom: 5px; font-family: sans-serif;"><span class="counter" data-target="24">0</span><span style="color: var(--white); font-size: 2.5rem;">/7</span></h3>
+            <p style="font-size: 1.2rem; color: #ccc; font-weight: bold;">دعم فني</p>
+        </div>
+        <div style="z-index: 1;" data-aos="zoom-in" data-aos-delay="300">
+            <h3 style="color: var(--primary); font-size: 3.5rem; font-weight: 900; text-shadow: 0 0 15px var(--primary-glow); margin-bottom: 5px; font-family: sans-serif;"><span class="counter" data-target="100">0</span><span style="color: var(--white); font-size: 2.5rem;">%</span></h3>
+            <p style="font-size: 1.2rem; color: #ccc; font-weight: bold;">جودة مضمونة</p>
+        </div>
     </section>
 
     <section style="padding: 100px 10%;" id="products">
@@ -218,6 +232,43 @@
 <script>
     AOS.init({ duration: 1000, once: true }); // تفعيل أنيميشن الظهور
     const lightbox = GLightbox({ selector: '.glightbox' }); // تفعيل تكبير الصور
+
+    // تأثير حركة الأرقام (Counter Animation)
+    const counters = document.querySelectorAll('.counter');
+    const speed = 100; // سرعة العداد
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 15);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    }
+
+    // تشغيل العداد فقط عندما يرى المستخدم القسم
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if(statsSection) {
+        observer.observe(statsSection);
+    }
 </script>
 
     
